@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merlin's Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Title Section -->
+        <header>
+            <h1>Merlin's Adventure</h1>
+        </header>
+
+        <!-- Game Area -->
+        <div class="game-grid">
+            <div class="tile" id="tile-1"></div>
+            <div class="tile" id="tile-2"></div>
+            <div class="tile" id="tile-3"></div>
+            <div class="tile" id="tile-4"></div>
+            <div class="tile" id="tile-5"></div>
+            <div class="tile" id="tile-6"></div>
+            <div class="tile" id="tile-7"></div>
+            <div class="tile" id="tile-8"></div>
+            <div class="tile" id="tile-9"></div>
+        </div>
+
+        <!-- Spin and Question Area -->
+        <div class="controls">
+            <div class="question-box">
+                <p id="question">You are on a journey to meet Merlin, what path do you choose?</p>
+            </div>
+            <div class="spin-buttons">
+                <button class="spin-button" id="spin-1">Over the Mountain</button>
+                <button class="spin-button" id="spin-2">By the River</button>
+                <button class="spin-button" id="spin-3">Through the Woods</button>
+                <button class="spin-button" id="spin-4">Across the Plains</button>
+                <button class="spin-button" id="spin-5">Into the Cavern</button>
+            </div>
+        </div>
+
+        <!-- Player Stats -->
+        <div class="player-stats">
+            <p>Coins: <span id="coin-count">1000</span></p>
+            <button id="refill-coins">Refill Coins (+250)</button>
+            <button id="clear-memory">Clear Memory</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
