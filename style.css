@@ -97,6 +97,24 @@ h1 {
     background-color: #666;
 }
 
+.payout-table {
+    margin-top: 20px;
+}
+
+.payout-table h3 {
+    color: #d4af37;
+}
+
+.payout-table ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.payout-table li {
+    margin: 5px 0;
+    color: #fff;
+}
+
 /* Animation for the dice roll */
 @keyframes roll {
     0% { transform: rotate(0); }
