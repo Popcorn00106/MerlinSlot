@@ -140,12 +140,8 @@ function handleSpin(difficulty) {
         achievements.freeGamesWon += freeGames;
         alert(`You won ${freeGames} free games!`);
 
-        // Store free games and coin count in localStorage
-        localStorage.setItem('freeGames', freeGames);
-        localStorage.setItem('coinCount', coinCount);
-
-        // Redirect to bonus page
-        window.location.href = 'bonus.html';
+        // Automatically spin free games
+        handleFreeGames(freeGames);
     }
 
     checkAchievements();
@@ -178,8 +174,9 @@ function handleFreeGames(freeGames) {
 function assignSpinButtonDifficulties() {
     const difficulties = ["very easy", "easy", "possible", "hard", "very hard"];
     spinButtons.forEach((button, index) => {
+        // Randomly assign difficulty for each button
         const difficulty = difficulties[Math.floor(Math.random() * difficulties.length)];
-        button.textContent = `Spin (${difficulty})`;
+
         button.addEventListener('click', function() {
             handleSpin(difficulty);
         });
@@ -189,22 +186,14 @@ function assignSpinButtonDifficulties() {
 // Update the question (this can be extended to pull random questions dynamically)
 function updateQuestion() {
     const questions = [
-        "You are on a journey to meet Merlin, what path do you choose?",
-        "Choose your quest: will you go over the mountain or cross the river?",
-        "Your path is set before you, but which will you choose?",
-        "A great adventure lies ahead, select your direction wisely.",
+        "You are on a journey to meet Merlin. What path do you choose?",
+        "Choose your quest: Will you go over the mountain or cross the river?",
+        "Your path is set before you. Which will you choose?",
+        "A great adventure lies ahead. Select your direction wisely.",
         "Which route will you take to reach Camelot?"
     ];
 
     let nextQuestion = questions[Math.floor(Math.random() * questions.length)];
-
-    // Influence future questions based on adventure history
-    if (adventureHistory.includes('river')) {
-        nextQuestion = "You have crossed the river, but now you must decide: will you head towards the forest or the cave?";
-    } else if (adventureHistory.includes('mountain')) {
-        nextQuestion = "After scaling the mountain, you encounter a fork in the path: will you explore the ruins or the hidden valley?";
-    }
-
     adventureHistory.push(nextQuestion); // Track chosen questions
     questionElement.textContent = nextQuestion;
 }
